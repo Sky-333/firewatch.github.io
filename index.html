@@ -1,55 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Drone Tracker</title>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <meta charset="UTF-8">
+  <title>Firewatch</title>
   <style>
     body {
       margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-family: Arial, sans-serif;
-    }
-    h1 {
-      text-align: center;
-      padding: 10px;
-    }
-    #map {
-      height: 90vh; /* fill most of the screen */
-      width: 100%;
+      font-size: 4rem;
+      background: #111;
+      color: #f04;
     }
   </style>
 </head>
 <body>
-  <h1>Drone Live Tracker</h1>
-  <div id="map"></div>
-
-  <!-- Leaflet library -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-  <script>
-    // Create the map
-    var map = L.map('map').setView([37.7749, -122.4194], 13); // starts at San Francisco
-
-    // Map tiles from OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
-
-    // Drone marker
-    var marker = L.marker([37.7749, -122.4194]).addTo(map)
-      .bindPopup("Drone Location")
-      .openPopup();
-
-    // Simulate updates (replace with real GPS data later)
-    function simulateDroneMove() {
-      let lat = 37.7749 + (Math.random() - 0.5) * 0.01;
-      let lon = -122.4194 + (Math.random() - 0.5) * 0.01;
-
-      marker.setLatLng([lat, lon]);
-      map.setView([lat, lon], 13);
-    }
-
-    setInterval(simulateDroneMove, 3000); // update every 3 seconds
-  </script>
+  Firewatch
 </body>
 </html>
